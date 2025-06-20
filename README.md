@@ -13,7 +13,7 @@ This backend system enables users to authenticate, manage their products, and ha
 - Role-based user management (optional)
 - Clean modular architecture using FastAPI + SQLAlchemy
 - Auto-generated interactive documentation (Swagger & Redoc)
-- Documentation API with markdown web page
+- Documentation API with markdown web page (httpx and widdershins(npm))
   → Available at: [https://api-diegoalmagro.up.railway.app/docs/api](https://api-diegoalmagro.up.railway.app/docs/api)
 
 ---
@@ -49,6 +49,7 @@ This backend system enables users to authenticate, manage their products, and ha
 - **PostgreSQL / SQLite (configurable)**
 - **Uvicorn** (ASGI server)
 - **pytest** (for testing)
+- **httpx and widdershins(npm)** (for documentation markdown)
 
 ---
 
@@ -77,6 +78,31 @@ pip install -r requirements.txt
 
 ```bash
 uvicorn app.main:app --reload
+```
+
+### 5. Environment Variables
+
+Make sure to create a `.env` file at the root of the project with the following variables:
+
+```bash
+Authentication (JWT)
+
+| Variable                       | Description                                  | Example           |
+|-------------------------------|----------------------------------------------|-------------------|
+| `SECRET_KEY`                  | Secret key used to sign JWT tokens           | `y6t5i8e3`        |
+| `ALGORITHM`                   | Encryption algorithm used by JWT             | `HS256`           |
+| `ACCESS_TOKEN_EXPIRE_MINUTES`| Token expiration time in minutes             | `60`    
+
+Database (PostgreSQL)
+
+| Variable        | Description                             | Example             |
+|----------------|-----------------------------------------|---------------------|
+| `DB_USER`       | Database user                           | `postgres`          |
+| `DB_PASSWORD`   | Database user password                  | `my_secure_password`|
+| `DB_HOST`       | PostgreSQL server host                  | `localhost`         |
+| `DB_PORT`       | Port used by PostgreSQL                 | `5432`              |
+| `DB_NAME`       | Name of the database                    | `my_database`       |
+
 ```
 
 ---
