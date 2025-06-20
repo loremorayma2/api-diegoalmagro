@@ -3,6 +3,8 @@ fastapi>=0.111.0
 uvicorn[standard]>=0.30.0
 sqlalchemy>=2.0.30
 pydantic>=2.7.0
+pydantic[email]>=2.7.0
+
 
 # Authentication
 python-jose[cryptography]>=3.3.0
@@ -19,3 +21,7 @@ httpx>=0.24.0
 
 # Environment variables
 python-dotenv>=1.0.1
+
+# Form parsing
+python-multipart>=0.0.6
+

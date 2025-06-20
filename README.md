@@ -49,6 +49,7 @@ This backend system enables users to authenticate, manage their products, and ha
 - **PostgreSQL / SQLite (configurable)**
 - **Uvicorn** (ASGI server)
 - **pytest** (for testing)
+- **python-multipart** (Form parsing)
 - **httpx and widdershins(npm)** (for documentation markdown)
 
 ---
